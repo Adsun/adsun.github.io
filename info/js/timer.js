@@ -6,7 +6,7 @@
 
 function lifeTimer() {
     
-    var start = new Date(1992, 8, 28);  // start at my birthday
+    var start = new Date(1993, 8, 21);  // start at my birthday
     var t = new Date() - start;
     
     var h = ~~(t / 1000 / 60 / 60 % 24);

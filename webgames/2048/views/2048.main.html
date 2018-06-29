@@ -1,0 +1,45 @@
+<div id="content" ng-controller="GameController as ctrl">
+    <!-- heading -->
+    <div id="heading" class="row">
+        <h1 class="title">2048</h1>
+        <div class="scores-container">
+            <div class="score-container">{{ctrl.game.currentScore}}</div>
+            <div class="best-container">{{ctrl.game.highScore}}</div>
+        </div>
+    </div>
+    <!-- instructions -->
+    <div id="instructions" class="row">合并这些数字以得到
+        <strong>2048</strong> !
+        <button ng-click="ctrl.newGame()" class="restart-button">新游戏</button>
+    </div>
+    <div id="game-container">
+        <div grid="" ng-model="ctrl.game" class="row"></div>
+        <div id="game-over" ng-if="ctrl.game.gameOver" class="row game-overlay">游戏结束了
+            <div class="lower">
+                <a class="retry-button" ng-click="ctrl.newGame()">重试</a>
+            </div>
+        </div>
+        <div id="win" ng-if="ctrl.game.win" class="row game-overlay">你赢了!
+            <div class="lower">
+                <a class="retry-button" ng-click="ctrl.newGame()">重试</a>
+            </div>
+        </div>
+    </div>
+    <p class="game-explanation">
+        <strong class="important">提示:</strong> 使用你的
+        <strong>方向键</strong> 移动卡片. 当两个数字相同的卡片相遇时, 它们将
+        <strong>融合成一个数字翻倍的卡片!</strong>
+    </p>
+    <!--
+    <hr>
+    <p>
+        <strong class="important">NOTE:</strong> This game was written using AngularJS.</p>
+    <hr>
+    <p>由
+        <a href="http://fullstackedu.com">Fullstack.io</a> 基于 2048 by
+        <a href="http://gabrielecirulli.com" target="_blank">Gabriele Cirulli.</a> Based on
+        <a href="https://itunes.apple.com/us/app/1024!/id823499224" target="_blank">1024 by Veewo Studio</a> and conceptually similar to
+        <a href="http://asherv.com/threes/" target="_blank">Threes by Asher Vollmer.</a>
+    </p>
+    -->
+</div>
